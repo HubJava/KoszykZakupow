@@ -4,7 +4,7 @@ namespace Koszyk_Zakupow;
 
 class ProductList
 {
-    private List<Product> products;
+    public List<Product> products;
 
     public ProductList()
     {
