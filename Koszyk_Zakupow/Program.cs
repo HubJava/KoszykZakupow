@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Net.Mime;
 using Koszyk_Zakupow;
 
 class Program
@@ -38,7 +40,7 @@ class Program
         Console.WriteLine();
 
         Cart cart = new Cart();
-        Console.WriteLine("Wpisz kod, żeby dodać do koszyka. Wciśnij ESC żeby wyjść.  Wciśnij P, aby zobaczyć paragon.");
+        Console.WriteLine("Wpisz kod, żeby dodać do koszyka. Wciśnij Z żeby wyjść.  Wciśnij P, aby zobaczyć paragon.");
       
         while (true)
 {
@@ -47,9 +49,12 @@ class Program
     var keyInfo = Console.ReadKey(intercept: false);
 
     //Wyjście z programu po wciśnięciu klawisza ESC
-    if (keyInfo.Key == ConsoleKey.Escape)
+    if (keyInfo.Key == ConsoleKey.Z)
     {
-        break;
+        Console.WriteLine();
+        Console.WriteLine("Dziekujemy za skorzystanie z kasy");
+       //`Environment.Exit(0);
+      break;
     }
 
     // Wyświetlanie łącznej wartości koszyka po wciśnięciu klawisza P
