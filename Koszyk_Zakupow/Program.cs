@@ -6,10 +6,11 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine();
         Console.WriteLine("KASA SKLEPOWA");
         Console.WriteLine();
-        Console.WriteLine("Autorzy: Hubert Hirt (122711), Szymon Albrycht (),Karol Urbańczyk (),");
-
+        Console.WriteLine("Autorzy: Hubert Hirt (122711), Szymon Albrycht (122692),Karol Urbańczyk (),");
+        Console.WriteLine();
         Console.WriteLine("Witaj w kasie sklepowej, poniżej lista produktów którą możesz kupić");
 
 
@@ -41,6 +42,7 @@ class Program
       
         while (true)
 {
+    Console.WriteLine();
     Console.WriteLine("Kod:");
     var keyInfo = Console.ReadKey(intercept: false);
 
