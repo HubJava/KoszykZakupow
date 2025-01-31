@@ -6,6 +6,9 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("KASA SKLEPOWA");
+        Console.WriteLine();
+        Console.WriteLine("Autorzy: Hubert Hirt (122711), Szymon Albrycht (),Karol Urbańczyk (),");
 
         Console.WriteLine("Witaj w kasie sklepowej, poniżej lista produktów którą możesz kupić");
 
@@ -31,15 +34,33 @@ class Program
 
         // Wyświetlanie produktów
         productList.DisplayProducts();
-
+        Console.WriteLine();
 
         Cart cart = new Cart();
-        Console.WriteLine("Wpisz kod, żeby dodać do koszyka. Wciśnij ESC żeby wyjść.");
+        Console.WriteLine("Wpisz kod, żeby dodać do koszyka. Wciśnij ESC żeby wyjść.  Wciśnij P, aby zobaczyć paragon.");
       
         while (true)
-        {
-            Console.WriteLine("Kod:");
-            string userInput = Console.ReadLine();
+{
+    Console.WriteLine("Kod:");
+    var keyInfo = Console.ReadKey(intercept: false);
+
+    //Wyjście z programu po wciśnięciu klawisza ESC
+    if (keyInfo.Key == ConsoleKey.Escape)
+    {
+        break;
+    }
+
+    // Wyświetlanie łącznej wartości koszyka po wciśnięciu klawisza P
+    if (keyInfo.Key == ConsoleKey.P)
+    {
+        Console.WriteLine("\nPodsumowanie koszyka:");
+        cart.DisplayCart();
+        decimal currentTotal = cart.TotalPrice();
+        Console.WriteLine($"\nŁączna wartość koszyka: {currentTotal} zł");
+        break;
+    }
+
+    string userInput = keyInfo.KeyChar + Console.ReadLine();
 
             if (int.TryParse(userInput, out int code)) 
           
@@ -54,13 +75,12 @@ class Program
                     Console.WriteLine("Nie znaleziono produktu.");
                 }
             }
-            // Wyświetlanie zawartości koszyka
-            Console.WriteLine("\nPodsumowanie:");
-            cart.DisplayCart();
-
+            
             // Obliczanie i wyświetlanie całkowitej wartości
             decimal total = cart.TotalPrice();
             Console.WriteLine($"Łączna wartość koszyka: {total} zł");
+
+           
         }
 
     }
