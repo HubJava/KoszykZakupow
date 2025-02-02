@@ -11,7 +11,7 @@ class Program
         Console.WriteLine();
         Console.WriteLine("KASA SKLEPOWA");
         Console.WriteLine();
-        Console.WriteLine("Autorzy: Hubert Hirt (122711), Szymon Albrycht (122692),Karol Urbańczyk (),");
+        Console.WriteLine("Autorzy: Hubert Hirt (122711), Szymon Albrycht (122692),Karol Urbańczyk (123764), Społeczna Akademia Nauk, Łodź");
         Console.WriteLine();
         Console.WriteLine("Witaj w kasie sklepowej, poniżej lista produktów którą możesz kupić");
 
@@ -66,7 +66,7 @@ class Program
         Console.WriteLine($"\nŁączna wartość koszyka: {currentTotal} zł");
         break;
     }
-
+    // dodawanie produktu do listy jesli sie zgadza podany kod
     string userInput = keyInfo.KeyChar + Console.ReadLine();
 
             if (int.TryParse(userInput, out int code)) 

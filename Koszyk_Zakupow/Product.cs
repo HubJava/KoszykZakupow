@@ -11,7 +11,7 @@ public class Product
     public int Code { get; set; }
 
 
-
+    // stworzenie obiektu produktu i nadanie atrybutów
     public Product(string name, decimal price, int code)
     {
         Name = name;

@@ -3,7 +3,7 @@
 namespace Koszyk_Zakupow;
 
 class ProductList
-{
+{   //tworzenie listy
     public List<Product> products;
 
     public ProductList()

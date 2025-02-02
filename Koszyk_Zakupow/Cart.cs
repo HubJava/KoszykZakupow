@@ -5,7 +5,7 @@ namespace Koszyk_Zakupow;
 public class Cart
 {
     private List<Product> cartItems;
-
+    //tworzenie listy
     public Cart()
     {
         
